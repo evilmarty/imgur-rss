@@ -1,0 +1,16 @@
+{
+  "name": "imgur-rss",
+  "version": "1.0.0",
+  "description": "An Imgur RSS generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marty Zalega",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.12.4",
+    "jade": "^1.10.0",
+    "morgan": "^1.5.3"
+  }
+}
