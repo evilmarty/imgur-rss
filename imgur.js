@@ -39,6 +39,10 @@ var ImgurProto = {
 };
 
 module.exports = function(clientId) {
+  if (!clientId) {
+    throw "You must provide an Imgur Client-ID";
+  }
+
   return Object.create(ImgurProto, {
     clientId: {
       writable: false,
