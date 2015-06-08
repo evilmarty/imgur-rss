@@ -9,18 +9,20 @@ rss(version='2.0', xmlns:atom='<a href="http://www.w3.org/2005/Atom" rel="nofoll
       lastBuildDate= formatDate(images[0].datetime)
 
     each image in images
-      item
-        title=image.title
-        link <a href="#{image.link}" rel="nofollow">#{image.link}</a>
-        pubDate= formatDate(image.datetime)
-        description
-          | <![CDATA[
-          if image.animated
-            video(autoplay=true width=image.width height=image.height loop=image.looping)
-              source(src=image.webm type='video/webm')
-              source(src=image.mp4 type='mp4')
-              img(src=image.link alt='HTML5 video unsupported')/
-          else
-            img(src=image.link alt='')/
-          | ]]>
+      if !image.is_album
+        item
+          title=image.title
+          link <a href="#{image.link}" rel="nofollow">#{image.link}</a>
+          pubDate= formatDate(image.datetime)
+          description
+            | <![CDATA[
+            if image.animated
+              video(autoplay=true width=image.width height=image.height loop=image.looping)
+                source(src=image.webm type='video/webm')
+                source(src=image.mp4 type='mp4')
+                img(src=image.link alt='HTML5 video unsupported')/
+            else
+              img(src=image.link alt='')/
+            p image.title
+            | ]]>
 
