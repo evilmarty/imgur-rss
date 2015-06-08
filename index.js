@@ -13,7 +13,7 @@ app.locals.formatDate = function(timestamp) {
 };
 
 app.get("/gallery.rss", function(req, res) {
-  imgur.gallery(function(err, images) {
+  imgur.gallery(req.query, function(err, images) {
     if (err) {
       res.status(500).end(err);
     } else {

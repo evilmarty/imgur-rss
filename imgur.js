@@ -1,10 +1,12 @@
 var http = require("https");
+var querystring = require("querystring");
 
 var ImgurProto = {
-  gallery: function(callback) {
+  gallery: function(params, callback) {
+    var qs = querystring.stringify(params);
     var options = {
       hostname: "api.imgur.com",
-      path: "/3/gallery.json",
+      path: ["/3/gallery.json", qs].join("?"),
       headers: {
         "Authorization": ["Client-ID", this.clientId].join(" "),
         "Content-Type": "application/json"
