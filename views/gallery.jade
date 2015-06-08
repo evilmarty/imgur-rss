@@ -1,5 +1,5 @@
 doctype xml
-rss(version='2.0', xmlns:atom='<a href="http://www.w3.org/2005/Atom" rel="nofollow">http://www.w3.org/2005/Atom</a>')
+rss(version='2.0', xmlns:atom='<a href="http://www.w3.org/2005/Atom", rel="nofollow">http://www.w3.org/2005/Atom</a>')
   channel
     title Imgur
     link <a href="https://imgur.com" rel="nofollow">https://imgur.com</a>
@@ -17,12 +17,12 @@ rss(version='2.0', xmlns:atom='<a href="http://www.w3.org/2005/Atom" rel="nofoll
           description
             | <![CDATA[
             if image.animated
-              video(autoplay=true width=image.width height=image.height loop=image.looping)
-                source(src=image.webm type='video/webm')
-                source(src=image.mp4 type='video/mp4')
-                img(src=image.link alt='HTML5 video unsupported')/
+              video(autoplay=true, controls=true, width=image.width, height=image.height, loop=image.looping)
+                source(src=image.webm, type='video/webm')
+                source(src=image.mp4, type='video/mp4')
+                img(src=image.link, alt='HTML5 video unsupported')/
             else
-              img(src=image.link alt='')/
+              img(src=image.link, alt='')/
             p= image.title
             | ]]>
 
