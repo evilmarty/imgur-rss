@@ -17,7 +17,7 @@ rss(version='2.0', xmlns:atom='<a href="http://www.w3.org/2005/Atom", rel="nofol
           description
             | <![CDATA[
             if image.animated
-              video(autoplay=true, controls=true, width=image.width, height=image.height, loop=image.looping)
+              video(width=image.width, height=image.height, loop=image.looping, controls, autoplay)
                 source(src=image.webm, type='video/webm')
                 source(src=image.mp4, type='video/mp4')
                 img(src=image.link, alt='HTML5 video unsupported')/
